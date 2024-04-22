@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 600
-const ACCELERATION = 5000
-const FRICTION = 3000
+const MAX_SPEED = 300
+const ACCELERATION = 50
+const FRICTION = 20
 const JUMP_VELOCITY = -2000
 const GRAVITY = 5000
 
@@ -10,7 +10,13 @@ const GRAVITY = 5000
 var input = Vector2.ZERO
 
 func _physics_process(delta):
-	var input_direction: Vector2 * get_input()
+	var input_direction: Vector2 = get_input()
+	
+	if input_direction != Vector2.ZERO:
+		accelerate(input_direction)
+	else:
+		decelerate()
+	player_movement(delta)
 	
 	velocity.y += GRAVITY * delta
 	player_movement(delta)
