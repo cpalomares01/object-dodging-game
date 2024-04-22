@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2p4k0h2wsdn"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_uwiy3"]
+[ext_resource type="Texture2D" uid="uid://c58iwmw6i64cu" path="res://textures/Pixel Adventure/Menu/Buttons/Restart.png" id="1_xpuqw"]
+[ext_resource type="Texture2D" uid="uid://ct05tnwu22dy4" path="res://textures/Pixel Adventure/Menu/Buttons/Close.png" id="2_efuh7"]
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uwiy3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -33.0
+offset_right = 57.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Retry" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+icon = ExtResource("1_xpuqw")
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu
+"
+icon = ExtResource("2_efuh7")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

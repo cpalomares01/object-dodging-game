@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh8gl6k6yp1mc"]
+[gd_scene load_steps=11 format=3 uid="uid://bh8gl6k6yp1mc"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_tclsv"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_es40m"]
 [ext_resource type="Texture2D" uid="uid://by4oqc74rdscc" path="res://textures/Pixel Adventure/Background/Blue.png" id="2_f1rwk"]
 [ext_resource type="Texture2D" uid="uid://tes80vp0sr3p" path="res://textures/Pixel Adventure/Terrain/Terrain (16x16).png" id="3_p5hb5"]
 [ext_resource type="PackedScene" uid="uid://cg5yl74vh4xf1" path="res://scenes/player.tscn" id="3_qa60g"]
 [ext_resource type="Script" path="res://scripts/score timer.gd" id="5_ks8fx"]
 [ext_resource type="Script" path="res://scripts/saw timer.gd" id="5_ugcb1"]
 [ext_resource type="PackedScene" uid="uid://c7255c7qr6tbx" path="res://scenes/menus/pause menu.tscn" id="7_d2r84"]
+[ext_resource type="PackedScene" uid="uid://c2p4k0h2wsdn" path="res://scenes/menus/game over menu.tscn" id="8_uxcsc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv2aq"]
 texture = ExtResource("3_p5hb5")
@@ -454,7 +455,7 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_fv2aq")
 
 [node name="Main" type="Node"]
-script = ExtResource("1_tclsv")
+script = ExtResource("1_es40m")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -492,6 +493,15 @@ offset_bottom = 72.0
 
 [node name="Pause Menu" parent="." instance=ExtResource("7_d2r84")]
 process_mode = 2
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(4, 4)
+
+[node name="Game Over" parent="." instance=ExtResource("8_uxcsc")]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5

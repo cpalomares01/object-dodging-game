@@ -1,24 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg5yl74vh4xf1"]
+[gd_scene load_steps=5 format=3 uid="uid://cg5yl74vh4xf1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7rqpi"]
+[ext_resource type="AudioStream" uid="uid://cl8o6d0wqfm4o" path="res://sfx/high jump.wav" id="2_b6pgs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lrs8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdlhq"]
 size = Vector2(1.04, 1.04)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["player"]]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 scale = Vector2(0.5, 0.5)
 collision_mask = 7
 script = ExtResource("1_7rqpi")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D" groups=["player"]]
 scale = Vector2(50, 50)
 mesh = SubResource("BoxMesh_lrs8k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["player"]]
 position = Vector2(7.15256e-07, 7.15256e-07)
 scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_qdlhq")
+
+[node name="LowJumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b6pgs")
+pitch_scale = 0.6
+
+[node name="HighJumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b6pgs")
