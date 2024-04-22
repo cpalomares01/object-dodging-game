@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuda7nihue8gs"]
+
+[ext_resource type="Script" path="res://scripts/main menu.gd" id="1_872v4"]
+[ext_resource type="Texture2D" uid="uid://b7q4f854vc3wf" path="res://textures/Pixel Adventure/Menu/Buttons/Play.png" id="1_vfhp4"]
+[ext_resource type="Texture2D" uid="uid://bwcvtp4jav1th" path="res://textures/Pixel Adventure/Menu/Buttons/Settings.png" id="2_1sx3y"]
+[ext_resource type="Texture2D" uid="uid://bjweaaxca8yl6" path="res://textures/Pixel Adventure/Menu/Buttons/Achievements.png" id="3_31qdd"]
+[ext_resource type="Texture2D" uid="uid://c58iwmw6i64cu" path="res://textures/Pixel Adventure/Menu/Buttons/Restart.png" id="4_mke5h"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_872v4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1153.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_vfhp4")
+flat = true
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_1sx3y")
+flat = true
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_31qdd")
+flat = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_mke5h")
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
