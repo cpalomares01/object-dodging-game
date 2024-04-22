@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += 8
+	position.x += 7
 
 
 func _on_body_entered(body):
