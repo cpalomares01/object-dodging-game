@@ -28,21 +28,25 @@ size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Play"
 icon = ExtResource("1_vfhp4")
 flat = true
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Options"
 icon = ExtResource("2_1sx3y")
 flat = true
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Credits"
 icon = ExtResource("3_31qdd")
 flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Quit"
 icon = ExtResource("4_mke5h")
 flat = true
 

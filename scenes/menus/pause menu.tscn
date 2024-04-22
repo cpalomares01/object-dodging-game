@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7255c7qr6tbx"]
+
+[ext_resource type="Script" path="res://scenes/menus/pause menu.gd" id="1_qjbmt"]
+[ext_resource type="Shader" path="res://shaders/pause menu.gdshader" id="2_b6oau"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2645"]
+shader = ExtResource("2_b6oau")
+shader_parameter/amount = 1.0
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjbmt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_b2645")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -332.0
+offset_right = -445.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8.445, 8.445)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
