@@ -9,7 +9,7 @@ script/source = "extends Control
 @onready var game_over = $\"../\"
 
 func _on_retry_pressed():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file(\"res://scenes/main.tscn\")
 
 func _on_main_menu_pressed():
 	pass # Replace with function body.
@@ -42,11 +42,13 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Retry" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Retry"
 icon = ExtResource("1_xpuqw")
 
 [node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Main Menu
 "
