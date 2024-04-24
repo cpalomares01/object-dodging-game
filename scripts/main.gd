@@ -23,5 +23,7 @@ func gameOver():
 	if alive:
 		game_over.show()
 		get_tree().paused = true
-		alive != alive
-	get_tree().paused = false
+	else:
+		print("unpause")
+		get_tree().paused = false
+	alive = !alive
