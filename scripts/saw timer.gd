@@ -1,7 +1,10 @@
 extends Timer
 
-var saw = preload("res://scenes/saw.tscn")
+var saw = load("res://scenes/saw.tscn")
 var saw_heights = [60, 120, 180, 240, 300, 360, 420, 480, 550]
+
+func gameOver():
+	print("debug in saw timer")
 
 func _ready():
 	wait_time = 1
@@ -15,7 +18,6 @@ func _on_timeout():
 	next_obstacle.position = Vector2(-100, saw_height)
 	add_child(next_obstacle)
 	
+	#increases spawn interval as game progresses
 	if wait_time > .2:
 		wait_time -= .01
-	else:
-		pass

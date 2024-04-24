@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
-signal killed
+@onready var game_over = "res://scenes/menus/game over menu.tscn"
 
 #constants
 const MAX_SPEED := 600
-const ACCELERATION = 70
-const FRICTION = 50
+const ACCELERATION = 100
+const FRICTION = 100
 const JUMP_VELOCITY = -900
 const GRAVITY = 2500
 
 #variables
+var is_alive = true
 var max_jumps = 2
 var jump_count = 0
 
@@ -38,3 +39,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 #endregion
+
+func gameOver():
+	if is_alive:
+		game_over.hide()
+		get_tree().paused = false
+	else:
+		game_over.show()
+		get_tree().paused = true
+	is_alive = !is_alive

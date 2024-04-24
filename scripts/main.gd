@@ -2,6 +2,7 @@ extends Node
 
 @onready var pause_menu = $"Pause Menu"
 @onready var game_over = $"Game Over"
+@onready var saw = "res://scenes/saw.tscn"
 
 var paused = false
 var is_alive = true
@@ -18,13 +19,3 @@ func pauseMenu():
 		pause_menu.show()
 		get_tree().paused = true
 	paused = !paused
-
-func gameOver():
-	if is_alive:
-		game_over.hide()
-		get_tree().paused = false
-	else:
-		game_over.show()
-		get_tree().paused = true
-	
-	is_alive = !is_alive

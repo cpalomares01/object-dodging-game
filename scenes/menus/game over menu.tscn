@@ -1,8 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2p4k0h2wsdn"]
 
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_uwiy3"]
 [ext_resource type="Texture2D" uid="uid://c58iwmw6i64cu" path="res://textures/Pixel Adventure/Menu/Buttons/Restart.png" id="1_xpuqw"]
 [ext_resource type="Texture2D" uid="uid://ct05tnwu22dy4" path="res://textures/Pixel Adventure/Menu/Buttons/Close.png" id="2_efuh7"]
+
+[sub_resource type="GDScript" id="GDScript_mjcjk"]
+script/source = "extends Control
+
+@onready var game_over = $\"../\"
+
+func _on_retry_pressed():
+	get_tree().reload_current_scene()
+
+func _on_main_menu_pressed():
+	pass # Replace with function body.
+"
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -11,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uwiy3")
+script = SubResource("GDScript_mjcjk")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

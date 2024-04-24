@@ -6,4 +6,4 @@ func _on_continue_pressed():
 	main.pauseMenu()
 
 func _on_main_menu_pressed():
-	pass
+	get_tree().change_scene_to_file("res://scenes/menus/main menu.tscn")
