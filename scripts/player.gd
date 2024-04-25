@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var main = $'../../'
+
 #constants
 const MAX_SPEED := 600
 const ACCELERATION = 100
@@ -8,22 +10,19 @@ const JUMP_VELOCITY = -900
 const GRAVITY = 2500
 
 #variables
-var max_jumps = 2
-var jump_count = 0
+var can_double_jump = false
 
 func _physics_process(delta):
 #region jump handler
-
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			jump_count = 0
+			can_double_jump = true
 			velocity.y = JUMP_VELOCITY
 			$"../LowJumpSound".play()
-			jump_count += 1
-		if not is_on_floor() and jump_count < max_jumps:
+		elif can_double_jump:
+			can_double_jump = false
 			velocity.y = JUMP_VELOCITY
 			$"../HighJumpSound".play()
-			jump_count += 1
 	else:
 		velocity.y += GRAVITY * delta
 
@@ -31,8 +30,10 @@ func _physics_process(delta):
 #region movement
 
 	var direction = Input.get_axis("left","right")
-	
 	velocity.x = move_toward(velocity.x, MAX_SPEED * direction, ACCELERATION)
 	move_and_slide()
 
 #endregion
+
+	if position.y > 800:
+		main.gameOver()

@@ -1,7 +1,7 @@
 extends Node
 
-@onready var pause_menu = $"Pause Menu"
-@onready var game_over = $"Game Over"
+@onready var pause_menu = $"PauseMenu"
+@onready var game_over = $"GameOver"
 
 var paused = false
 var alive = true
@@ -24,6 +24,5 @@ func gameOver():
 		game_over.show()
 		get_tree().paused = true
 	else:
-		print("unpause")
 		get_tree().paused = false
 	alive = !alive

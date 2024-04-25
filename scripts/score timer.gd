@@ -4,7 +4,6 @@ var score = 0
 var score_label: Label
 
 func _ready():
-	print(score)
 	score_label = $"../ScoreLabel"
 	update_score_label()
 
