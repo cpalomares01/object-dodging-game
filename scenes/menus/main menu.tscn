@@ -53,11 +53,11 @@ text = "Quit"
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-z_index = -10
-layout_mode = 0
-offset_right = 1152.0
+z_index = -20
+layout_mode = 2
+offset_right = 1153.0
 offset_bottom = 648.0
+mouse_filter = 2
 texture = ExtResource("2_b21pa")
 stretch_mode = 1
 
