@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 AudioPlayer="*res://scenes/audio_player.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 jump={

@@ -1,10 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuda7nihue8gs"]
+[gd_scene load_steps=2 format=3 uid="uid://cuda7nihue8gs"]
 
 [ext_resource type="Script" path="res://scripts/main menu.gd" id="1_872v4"]
-[ext_resource type="Texture2D" uid="uid://b7q4f854vc3wf" path="res://textures/Pixel Adventure/Menu/Buttons/Play.png" id="1_vfhp4"]
-[ext_resource type="Texture2D" uid="uid://bwcvtp4jav1th" path="res://textures/Pixel Adventure/Menu/Buttons/Settings.png" id="2_1sx3y"]
-[ext_resource type="Texture2D" uid="uid://bjweaaxca8yl6" path="res://textures/Pixel Adventure/Menu/Buttons/Achievements.png" id="3_31qdd"]
-[ext_resource type="Texture2D" uid="uid://c58iwmw6i64cu" path="res://textures/Pixel Adventure/Menu/Buttons/Restart.png" id="4_mke5h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -28,26 +24,26 @@ size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Play"
-icon = ExtResource("1_vfhp4")
 flat = true
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Options"
-icon = ExtResource("2_1sx3y")
 flat = true
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Credits"
-icon = ExtResource("3_31qdd")
 flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Quit"
-icon = ExtResource("4_mke5h")
 flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

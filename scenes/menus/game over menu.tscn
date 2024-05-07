@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2p4k0h2wsdn"]
+[gd_scene load_steps=3 format=3 uid="uid://c2p4k0h2wsdn"]
 
 [ext_resource type="Script" path="res://scripts/Label.gd" id="1_kga16"]
-[ext_resource type="Texture2D" uid="uid://c58iwmw6i64cu" path="res://textures/Pixel Adventure/Menu/Buttons/Restart.png" id="1_xpuqw"]
-[ext_resource type="Texture2D" uid="uid://ct05tnwu22dy4" path="res://textures/Pixel Adventure/Menu/Buttons/Close.png" id="2_efuh7"]
 
 [sub_resource type="GDScript" id="GDScript_mjcjk"]
 script/source = "extends Control
@@ -11,7 +9,7 @@ script/source = "extends Control
 
 func _on_retry_pressed():
 	main.gameOver()
-	get_tree().change_scene_to_file(\"res://scenes/main.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/menus/main menu.tscn\")
 
 func _on_main_menu_pressed():
 	main.gameOver()
@@ -46,6 +44,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
 text = "Score: "
 horizontal_alignment = 1
 script = ExtResource("1_kga16")
@@ -53,15 +52,15 @@ script = ExtResource("1_kga16")
 [node name="Retry" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Retry"
-icon = ExtResource("1_xpuqw")
 
 [node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Main Menu
 "
-icon = ExtResource("2_efuh7")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

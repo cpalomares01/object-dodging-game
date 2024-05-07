@@ -502,7 +502,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-scale = Vector2(4, 4)
 
 [node name="GameOver" parent="." instance=ExtResource("8_uxcsc")]
 visible = false
@@ -511,7 +510,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-scale = Vector2(4, 4)
 
 [connection signal="timeout" from="SawTimer" to="SawTimer" method="_on_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="ScoreTimer" method="_on_timeout"]
