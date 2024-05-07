@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://daovarhxii1e2"]
+[gd_scene load_steps=4 format=3 uid="uid://daovarhxii1e2"]
 
 [ext_resource type="Script" path="res://scenes/coming soon.gd" id="1_rb7i6"]
+[ext_resource type="FontFile" uid="uid://bvica0uv4p1u2" path="res://ui themes/joystix monospace.otf" id="2_u7i8c"]
+[ext_resource type="Theme" uid="uid://82vc64nsfumf" path="res://ui themes/main theme.tres" id="3_k8xxk"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -18,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u7i8c")
 theme_override_font_sizes/font_size = 50
 text = "Coming soon!"
 horizontal_alignment = 1
@@ -36,6 +39,9 @@ offset_right = 21.0
 offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_k8xxk")
+theme_override_fonts/font = ExtResource("2_u7i8c")
 text = "Back"
+flat = true
 
 [connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]

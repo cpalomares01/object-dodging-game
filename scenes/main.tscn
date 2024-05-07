@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh8gl6k6yp1mc"]
+[gd_scene load_steps=12 format=3 uid="uid://bh8gl6k6yp1mc"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_es40m"]
 [ext_resource type="Texture2D" uid="uid://by4oqc74rdscc" path="res://textures/Pixel Adventure/Background/Blue.png" id="2_f1rwk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/score timer.gd" id="5_ks8fx"]
 [ext_resource type="Script" path="res://scripts/saw timer.gd" id="5_ugcb1"]
 [ext_resource type="PackedScene" uid="uid://c7255c7qr6tbx" path="res://scenes/menus/pause menu.tscn" id="7_d2r84"]
+[ext_resource type="FontFile" uid="uid://bvica0uv4p1u2" path="res://ui themes/joystix monospace.otf" id="7_wurva"]
 [ext_resource type="PackedScene" uid="uid://c2p4k0h2wsdn" path="res://scenes/menus/game over menu.tscn" id="8_uxcsc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv2aq"]
@@ -493,6 +494,8 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 208.0
 offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("7_wurva")
+theme_override_font_sizes/font_size = 16
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_d2r84")]
 process_mode = 2

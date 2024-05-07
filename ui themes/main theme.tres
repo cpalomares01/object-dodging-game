@@ -1,7 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://82vc64nsfumf"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://82vc64nsfumf"]
 
 [ext_resource type="FontFile" uid="uid://bvica0uv4p1u2" path="res://ui themes/joystix monospace.otf" id="1_qjl1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3uwj"]
+content_margin_bottom = 10.0
 
 [resource]
 Button/font_sizes/font_size = 11
 Button/fonts/font = ExtResource("1_qjl1t")
+Button/styles/hover = SubResource("StyleBoxFlat_b3uwj")

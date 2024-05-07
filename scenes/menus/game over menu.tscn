@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2p4k0h2wsdn"]
+[gd_scene load_steps=5 format=3 uid="uid://c2p4k0h2wsdn"]
 
+[ext_resource type="FontFile" uid="uid://bvica0uv4p1u2" path="res://ui themes/joystix monospace.otf" id="1_7r7ab"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="1_kga16"]
 [ext_resource type="Theme" uid="uid://82vc64nsfumf" path="res://ui themes/main theme.tres" id="2_0g6ls"]
 
@@ -45,6 +46,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7r7ab")
 theme_override_font_sizes/font_size = 45
 text = "Score: "
 horizontal_alignment = 1
@@ -54,8 +56,10 @@ script = ExtResource("1_kga16")
 process_mode = 3
 layout_mode = 2
 theme = ExtResource("2_0g6ls")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Retry"
+flat = true
 
 [node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
@@ -64,6 +68,7 @@ theme = ExtResource("2_0g6ls")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu
 "
+flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
