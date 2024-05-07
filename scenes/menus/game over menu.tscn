@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2p4k0h2wsdn"]
+[gd_scene load_steps=4 format=3 uid="uid://c2p4k0h2wsdn"]
 
 [ext_resource type="Script" path="res://scripts/Label.gd" id="1_kga16"]
+[ext_resource type="Theme" uid="uid://82vc64nsfumf" path="res://ui themes/main theme.tres" id="2_0g6ls"]
 
 [sub_resource type="GDScript" id="GDScript_mjcjk"]
 script/source = "extends Control
@@ -52,12 +53,14 @@ script = ExtResource("1_kga16")
 [node name="Retry" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
+theme = ExtResource("2_0g6ls")
 theme_override_font_sizes/font_size = 50
 text = "Retry"
 
 [node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
+theme = ExtResource("2_0g6ls")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu
 "

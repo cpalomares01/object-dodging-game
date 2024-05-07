@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuda7nihue8gs"]
+[gd_scene load_steps=4 format=3 uid="uid://cuda7nihue8gs"]
 
 [ext_resource type="Script" path="res://scripts/main menu.gd" id="1_872v4"]
+[ext_resource type="Texture2D" uid="uid://chytjro3lte0c" path="res://textures/Pixel Adventure/Background/Purple.png" id="2_b21pa"]
+[ext_resource type="Theme" uid="uid://82vc64nsfumf" path="res://ui themes/main theme.tres" id="2_ode5b"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -24,27 +26,40 @@ size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ode5b")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 flat = true
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ode5b")
 theme_override_font_sizes/font_size = 50
 text = "Options"
 flat = true
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ode5b")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ode5b")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 flat = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+z_index = -10
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_b21pa")
+stretch_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7255c7qr6tbx"]
+[gd_scene load_steps=5 format=3 uid="uid://c7255c7qr6tbx"]
 
 [ext_resource type="Script" path="res://scripts/pause menu.gd" id="1_qjbmt"]
 [ext_resource type="Shader" path="res://shaders/pause menu.gdshader" id="2_b6oau"]
+[ext_resource type="Theme" uid="uid://82vc64nsfumf" path="res://ui themes/main theme.tres" id="3_cero2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2645"]
 shader = ExtResource("2_b6oau")
@@ -46,11 +47,13 @@ layout_mode = 2
 
 [node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_cero2")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
 
 [node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_cero2")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 
