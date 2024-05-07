@@ -20,6 +20,7 @@ func pauseMenu():
 	paused = !paused
 
 func gameOver():
+	$"PlayerDeathSFX".play()
 	if alive:
 		game_over.show()
 		get_tree().paused = true
