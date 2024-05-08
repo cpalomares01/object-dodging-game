@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bvica0uv4p1u2" path="res://ui themes/joystix monospace.otf" id="7_wurva"]
 [ext_resource type="PackedScene" uid="uid://c2p4k0h2wsdn" path="res://scenes/menus/game over menu.tscn" id="8_uxcsc"]
 [ext_resource type="AudioStream" uid="uid://cjea44k0s5ney" path="res://sfx/explosion.wav" id="10_ybd5f"]
-[ext_resource type="AudioStream" uid="uid://msq17jjabrd7" path="res://music/godot 2.ogg" id="11_j0r11"]
+[ext_resource type="AudioStream" uid="uid://msq17jjabrd7" path="res://music/godot project.ogg" id="11_j0r11"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv2aq"]
 texture = ExtResource("3_p5hb5")
@@ -509,6 +509,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 
 [node name="GameOver" parent="." instance=ExtResource("8_uxcsc")]
+process_mode = 2
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -522,6 +523,7 @@ stream = ExtResource("10_ybd5f")
 volume_db = -7.106
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 1
 stream = ExtResource("11_j0r11")
 
 [connection signal="timeout" from="SawTimer" to="SawTimer" method="_on_timeout"]
