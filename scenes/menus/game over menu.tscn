@@ -48,7 +48,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_7r7ab")
 theme_override_font_sizes/font_size = 45
-text = "Score: "
+text = "Score:Coming Soon"
 horizontal_alignment = 1
 script = ExtResource("1_kga16")
 
