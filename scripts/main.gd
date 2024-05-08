@@ -6,6 +6,9 @@ extends Node
 var paused = false
 var alive = true
 
+func _ready():
+	$"Music".play()
+
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
