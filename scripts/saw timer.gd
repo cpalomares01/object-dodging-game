@@ -19,5 +19,5 @@ func _on_timeout():
 	add_child(next_obstacle)
 	
 	#increases spawn interval as game progresses
-	if wait_time > .2:
+	if wait_time > .4:
 		wait_time -= .01

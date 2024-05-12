@@ -10,10 +10,13 @@ const JUMP_VELOCITY = -900
 const GRAVITY = 2500
 
 #variables
-var can_double_jump = false
+var can_double_jump = true
 
 func _physics_process(delta):
 #region jump handler
+	if is_on_floor():
+		can_double_jump = true
+
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			can_double_jump = true
