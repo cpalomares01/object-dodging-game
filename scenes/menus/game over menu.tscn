@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2p4k0h2wsdn"]
+[gd_scene load_steps=6 format=3 uid="uid://c2p4k0h2wsdn"]
 
 [ext_resource type="FontFile" uid="uid://bvica0uv4p1u2" path="res://ui themes/joystix monospace.otf" id="1_7r7ab"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="1_kga16"]
 [ext_resource type="Theme" uid="uid://82vc64nsfumf" path="res://ui themes/main theme.tres" id="2_0g6ls"]
+[ext_resource type="Script" path="res://scenes/menus/Timer.gd" id="4_n6v2l"]
 
 [sub_resource type="GDScript" id="GDScript_mjcjk"]
 script/source = "extends Control
@@ -16,6 +17,10 @@ func _on_retry_pressed():
 func _on_main_menu_pressed():
 	main.gameOver()
 	get_tree().change_scene_to_file(\"res://scenes/menus/main menu.tscn\")
+
+
+func _on_timer_timeout():
+	
 "
 
 [node name="Game Over" type="Control"]
@@ -70,5 +75,11 @@ text = "Main Menu
 "
 flat = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+script = ExtResource("4_n6v2l")
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

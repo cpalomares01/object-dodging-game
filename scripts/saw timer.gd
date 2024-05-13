@@ -3,9 +3,6 @@ extends Timer
 var saw = load("res://scenes/saw.tscn")
 var saw_heights = [60, 120, 180, 240, 300, 360, 420, 480, 550]
 
-func gameOver():
-	print("debug in saw timer")
-
 func _ready():
 	wait_time = 1
 
