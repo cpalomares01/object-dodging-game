@@ -462,6 +462,8 @@ sources/0 = SubResource("TileSetAtlasSource_fv2aq")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_es40m")
+metadata/_edit_horizontal_guides_ = [-32.0, 648.0]
+metadata/_edit_vertical_guides_ = [-32.0, 1184.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

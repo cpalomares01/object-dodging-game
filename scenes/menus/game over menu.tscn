@@ -20,7 +20,7 @@ func _on_main_menu_pressed():
 
 
 func _on_timer_timeout():
-	
+	pass
 "
 
 [node name="Game Over" type="Control"]

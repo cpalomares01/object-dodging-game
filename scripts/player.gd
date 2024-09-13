@@ -18,7 +18,7 @@ func _physics_process(delta):
 		can_double_jump = true
 
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if is_on_floor() || !$CoyoteTimer.is_stopped() :
 			can_double_jump = true
 			velocity.y = JUMP_VELOCITY
 			$"../LowJumpSound".play()
@@ -34,7 +34,11 @@ func _physics_process(delta):
 
 	var direction = Input.get_axis("left","right")
 	velocity.x = move_toward(velocity.x, MAX_SPEED * direction, ACCELERATION)
+	var was_on_floor = is_on_floor()
 	move_and_slide()
+	
+	if was_on_floor && !is_on_floor():
+		$CoyoteTimer.start()
 
 #endregion
 

@@ -24,6 +24,18 @@ position = Vector2(7.15256e-07, 7.15256e-07)
 scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_qdlhq")
 
+[node name="CoyoteTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.15
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -32
+limit_top = 0
+limit_right = 1184
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+
 [node name="LowJumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_b6pgs")
 pitch_scale = 0.6

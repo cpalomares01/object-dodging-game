@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6rfwya800h2r"]
+
+[ext_resource type="AudioStream" uid="uid://msq17jjabrd7" path="res://music/godot project.ogg" id="1_c7cs5"]
+[ext_resource type="Script" path="res://scenes/music_manager.gd" id="1_xypqp"]
+
+[node name="MusicManager" type="AudioStreamPlayer"]
+process_mode = 4
+stream = ExtResource("1_c7cs5")
+autoplay = true
+script = ExtResource("1_xypqp")
